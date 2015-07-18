@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<body>
+{% if targets %}
+    <ul>
+    {% for name, address in targets.iteritems() %}
+      <li><a href="ssh://pi@{{ address }}">{{name}}</a></li>
+    {% endfor %}
+{% endif %}
+
+</body>
+</html>

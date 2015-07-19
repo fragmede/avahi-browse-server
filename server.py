@@ -33,7 +33,7 @@ def on_service_state_change(zeroconf, service_type, name, state_change):
     if state_change is ServiceStateChange.Added:
         info = zeroconf.get_service_info(service_type, name)
         if info:
-            targets[info.server[:-1]] = socket.inet_ntoa(info.address)
+            targets[info.server[:-1]] = {'address':socket.inet_ntoa(info.address),'connected':True}
     else: #  ServiceStateChange.Removed
         del targets[name]
 

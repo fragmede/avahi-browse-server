@@ -8,7 +8,6 @@ body {
 
 li {
         font-size: 200%;
-        color: navy;
         margin-left: 20px;
         margin-bottom: 20px;
 }
@@ -18,8 +17,9 @@ li {
     <center><h1>Dreamland SSH panel</h1></center>
 {% if targets %}
     <ul>
-    {% for name, address in targets.iteritems() %}
-    <li><a href="ssh://{{ address }}">{{name}} - {{address}}</a></li>
+    {% for name, info in targets.iteritems() %}
+    <li>
+    <a style="color: {% if info['connected'] %}green{% else %}red{% endif %};" href="ssh://{{ address }}">{{name}} - {{info['address']}}</a></li>
     {% endfor %}
 {% endif %}
 

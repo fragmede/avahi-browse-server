@@ -1,10 +1,25 @@
 <!doctype html>
 <html>
+    <head>
+        <style>
+body {
+        background-color: lightgray;
+}
+
+li {
+        font-size: 200%;
+        color: navy;
+        margin-left: 20px;
+        margin-bottom: 20px;
+}
+        </style>
+    </head>
 <body>
+    <center><h1>Dreamland SSH panel</h1></center>
 {% if targets %}
     <ul>
     {% for name, address in targets.iteritems() %}
-      <li><a href="ssh://pi@{{ address }}">{{name}}</a></li>
+    <li><a href="ssh://pi@{{ address }}">{{name}} - {{address}}</a></li>
     {% endfor %}
 {% endif %}
 

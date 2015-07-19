@@ -19,7 +19,7 @@ li {
 {% if targets %}
     <ul>
     {% for name, address in targets.iteritems() %}
-    <li><a href="ssh://pi@{{ address }}">{{name}} - {{address}}</a></li>
+    <li><a href="ssh://{{ address }}">{{name}} - {{address}}</a></li>
     {% endfor %}
 {% endif %}
 

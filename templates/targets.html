@@ -19,7 +19,7 @@ li {
     <ul>
     {% for name, info in targets.iteritems() %}
     <li>
-    <a style="color: {% if info['connected'] %}green{% else %}red{% endif %};" href="ssh://{{ address }}">{{name}} - {{info['address']}}</a></li>
+    <a style="color: {% if info['connected'] %}green{% else %}red{% endif %};" href="ssh://{{ info['address'] }}">{{name}} - {{info['address']}}</a></li>
     {% endfor %}
 {% endif %}
 
